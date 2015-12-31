@@ -1,0 +1,30 @@
+contacter:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:Contacter:index" }
+
+contacter_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:Contacter:show" }
+
+contacter_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:Contacter:new" }
+
+contacter_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:Contacter:create" }
+    requirements: { _method: post }
+
+contacter_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:Contacter:edit" }
+
+contacter_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:Contacter:update" }
+    requirements: { _method: post|put }
+
+contacter_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:Contacter:delete" }
+    requirements: { _method: post|delete }

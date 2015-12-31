@@ -1,0 +1,44 @@
+{% extends 'ApplicationHomeBundle:Admin:index.html.twig' %}
+
+{% block contenu -%}
+    <h1>Demande de Visite </h1>
+
+    <table class="table-bordered col-md-9">
+        <thead>
+            <tr>
+                <th>Statut</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Tel</th>
+                <th>Horaire</th>
+                <th>Texte</th>
+                <th>Annonce</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.statut }}</td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.tel }}</td>
+                <td>{{ entity.horaire }}</td>
+                <td>{{ entity.texte }}</td>
+                <td>{{ entity.annonce }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('demandevisite_show', { 'id': entity.id }) }}">afficher</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('demandevisite_edit', { 'id': entity.id }) }}">modifier</a>
+                    </li>
+
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

@@ -1,0 +1,99 @@
+<?php
+
+namespace Application\ApplicationHomeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Autres
+ *
+ * @ORM\Table(name="autres", indexes={@ORM\Index(name="fk_Autres_region1_idx", columns={"region_id"})})
+ * @ORM\Entity
+ */
+class Autres
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texte", type="string", length=1000, nullable=true)
+     */
+    private $texte;
+
+    /**
+     * @var \Region
+     *
+     * @ORM\ManyToOne(targetEntity="Region")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="region_id", referencedColumnName="id")
+     * })
+     */
+    private $region;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set texte
+     *
+     * @param string $texte
+     * @return Autres
+     */
+    public function setTexte($texte)
+    {
+        $this->texte = $texte;
+
+        return $this;
+    }
+
+    /**
+     * Get texte
+     *
+     * @return string 
+     */
+    public function getTexte()
+    {
+        return $this->texte;
+    }
+
+    /**
+     * Set region
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\Region $region
+     * @return Autres
+     */
+    public function setRegion(\Application\ApplicationHomeBundle\Entity\Region $region = null)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\Region 
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+}

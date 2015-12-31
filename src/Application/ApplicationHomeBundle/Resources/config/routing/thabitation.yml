@@ -1,0 +1,30 @@
+thabitation:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:THabitation:index" }
+
+thabitation_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:THabitation:show" }
+
+thabitation_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:THabitation:new" }
+
+thabitation_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:THabitation:create" }
+    requirements: { _method: post }
+
+thabitation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:THabitation:edit" }
+
+thabitation_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:THabitation:update" }
+    requirements: { _method: post|put }
+
+thabitation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:THabitation:delete" }
+    requirements: { _method: post|delete }

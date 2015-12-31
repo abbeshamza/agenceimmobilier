@@ -1,0 +1,116 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Confort</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Ascenseur</th>
+                <td>{{ entity.ascenseur }}</td>
+            </tr>
+            <tr>
+                <th>Adsl</th>
+                <td>{{ entity.adsl }}</td>
+            </tr>
+            <tr>
+                <th>Antenneparabolique</th>
+                <td>{{ entity.antenneParabolique }}</td>
+            </tr>
+            <tr>
+                <th>Balcon</th>
+                <td>{{ entity.balcon }}</td>
+            </tr>
+            <tr>
+                <th>Cellier</th>
+                <td>{{ entity.cellier }}</td>
+            </tr>
+            <tr>
+                <th>Chauffage</th>
+                <td>{{ entity.chauffage }}</td>
+            </tr>
+            <tr>
+                <th>Climatisation</th>
+                <td>{{ entity.climatisation }}</td>
+            </tr>
+            <tr>
+                <th>Cuisineequipe</th>
+                <td>{{ entity.cuisineEquipe }}</td>
+            </tr>
+            <tr>
+                <th>Doublevitrage</th>
+                <td>{{ entity.doubleVitrage }}</td>
+            </tr>
+            <tr>
+                <th>Dressing</th>
+                <td>{{ entity.dressing }}</td>
+            </tr>
+            <tr>
+                <th>Gazdeville</th>
+                <td>{{ entity.gazDeVille }}</td>
+            </tr>
+            <tr>
+                <th>Interphone</th>
+                <td>{{ entity.interphone }}</td>
+            </tr>
+            <tr>
+                <th>Jardinprivatif</th>
+                <td>{{ entity.jardinPrivatif }}</td>
+            </tr>
+            <tr>
+                <th>Marbreblanc</th>
+                <td>{{ entity.marbreBlanc }}</td>
+            </tr>
+            <tr>
+                <th>Marbrethala</th>
+                <td>{{ entity.marbreThala }}</td>
+            </tr>
+            <tr>
+                <th>Piscine</th>
+                <td>{{ entity.piscine }}</td>
+            </tr>
+            <tr>
+                <th>Parking</th>
+                <td>{{ entity.parking }}</td>
+            </tr>
+            <tr>
+                <th>Placard</th>
+                <td>{{ entity.placard }}</td>
+            </tr>
+            <tr>
+                <th>Residencegardee</th>
+                <td>{{ entity.residenceGardee }}</td>
+            </tr>
+            <tr>
+                <th>Syndic</th>
+                <td>{{ entity.syndic }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ entity.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Videosurveillance</th>
+                <td>{{ entity.videoSurveillance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('confort') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('confort_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

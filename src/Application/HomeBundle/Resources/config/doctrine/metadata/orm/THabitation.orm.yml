@@ -1,0 +1,52 @@
+THabitation:
+    type: entity
+    table: t_habitation
+    indexes:
+        fk_T_habitation_region1_idx:
+            columns:
+                - region_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        superficie:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        prix:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        texte:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    manyToOne:
+        region:
+            targetEntity: Region
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                region_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

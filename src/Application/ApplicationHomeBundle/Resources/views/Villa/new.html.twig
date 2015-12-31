@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body -%}
+    <div class="col-md-offset-4">
+        <h1 style="color: #0000BB">Nouvelle annonce Villa</h1>
+    </div>
+
+
+    {{ form_start(form) }}
+
+    <div class="row col-md-offset-2 container-fluid" >
+        <div class="col-md-4 column">
+            <table>
+                <tr><td> <label>Titre :</label> </td><td>{{ form_widget(form.titre) }}</td></tr>
+                <tr><td> <label>Superficie Terrain :</label> </td><td>{{ form_widget(form.superficieTerrain) }}</td></tr>
+                <tr><td> <label>Surface batie :</label> </td><td>{{ form_widget(form.surfaceBatie) }}</td></tr>
+                <tr><td> <label>Nombre Etages :</label> </td><td>{{ form_widget(form.nbrEtage) }}</td></tr>
+                <tr><td> <label>Nombre Chambres :</label> </td><td>{{ form_widget(form.nbrChambre) }}</td></tr>
+                <tr><td> <label>Nombre Salons :</label> </td><td>{{ form_widget(form.nbrSalon) }}</td></tr>
+                <tr><td> <label>Nombre Salle à manger :</label> </td><td>{{ form_widget(form.nbrSalleAMange) }}</td></tr>
+                <tr><td> <label>Nombre Salle de Bains :</label> </td><td>{{ form_widget(form.nbrSalleDeBain) }}</td></tr>
+                <tr><td> <label>Prix :</label> </td><td>{{ form_widget(form.prix) }}</td></tr>
+                <tr><td> <label>Texte Annonce :</label> </td><td>{{ form_widget(form.texteAnnonce) }}</td></tr>
+                <tr><td> <label>Type Annonce :</label> </td><td>{{ form_widget(form.typeAnnonce) }}</td></tr>
+                <tr><td> <label>Region :</label> </td><td>{{ form_widget(form.region) }}</td></tr>
+                <tr><td> <label>Confort :</label> </td><td>{{ form_widget(form.confort) }}</td></tr>
+                <tr><td>   </td><td>{{ form_widget(form.submit) }} <button>  <a href="{{ path('villa') }}">Retour </a></button></td></tr>
+            </table>
+
+            <input type="hidden"  name="coord" id="co">
+        </div>
+    <div class="col-md-4 column">
+
+        <div id="map" style="width: 400px ;height: 400px ;margin:  0 auto"></div>
+    </div>
+
+    {{ form_end(form) }}
+
+    </div>
+
+
+{% endblock %}

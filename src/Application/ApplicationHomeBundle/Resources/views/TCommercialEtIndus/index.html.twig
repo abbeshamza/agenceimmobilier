@@ -1,0 +1,95 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="row" xmlns="http://www.w3.org/1999/html">
+        <!-- right column -->
+        <div class="col-md-4">
+            <div class="well well-sm">
+                <!-- block -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">Filtre</div>
+                    <div class="panel-body">
+                        {% include '::filter.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <!-- REPEAT -->
+            {% for entity in entities %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="well well-sm">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <h3 class="alert alert-info titreAnnonce">
+                                        Titre Annonce :{{ entity.titre }} <small>Réference:Tci{{ entity.id }}</small>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-md-6 column">
+                                    <img alt="140x140" src="{{ asset('uploads/7/'~entity.images[0])}}" class="img-responsive"/>
+                                </div>
+                                <div class="col-md-6 column">
+                                    <blockquote>
+                                        <ul class="listDesc">
+                                            <li>
+                                                Lieu : {{ entity.region }}
+                                            </li>
+                                            <li>
+                                                Surface :{{ entity.superficie }}
+                                            </li>
+                                            <li>
+                                                Prix : {{ entity.prix }}
+                                            </li>
+                                            <li>
+                                                Prix de F.C : {{ entity.prix }}
+                                            </li>
+                                        </ul>
+                                    </blockquote>
+                                    <button type="button" class="btn btn-default pull-right"> <a href="{{ path('tcommercialetindus_show', { 'id': entity.id }) }}">Fiche détaillee</a></button>
+                                    {% if is_granted('ROLE_USER') %}
+                                        <button type="button" class="btn btn-default pull-right"><a href="{{ path('tcommercialetindus_edit', { 'id': entity.id }) }}">modifier</a></button>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <!-- End REPEAT -->
+        </div>
+    </div>
+
+    <!-- pagination -->
+
+    <div class="row clearfix paginationBlock">
+        <div class="col-md-4  col-md-offset-8 column" align="right">
+            <ul class="pagination">
+                <li>
+                    <a href="#">Prev</a>
+                </li>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

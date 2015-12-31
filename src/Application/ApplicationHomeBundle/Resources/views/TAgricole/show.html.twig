@@ -1,0 +1,126 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}<div class="row clearfix" style="margin-top: 20px;">
+    <div class="col-md-12">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-md-6 column">
+                    <div class="carousel slide" id="carousel-371506">
+                        <ol class="carousel-indicators">
+                            <li class="active" data-slide-to="0" data-target="#carousel-371506">
+                            </li>
+                            <li data-slide-to="1" data-target="#carousel-371506">
+                            </li>
+                            <li data-slide-to="2" data-target="#carousel-371506">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <!--end repeat -->
+                            {% set i = 0 %}
+                            {% for im in entity.images %}
+                            {% if i ==0 %}
+                            <div class="item active ">
+                                {% set i = 1 %}
+                                {% else %}
+                                <div class="item  ">
+                                    {% endif %}
+                                    <img alt="" src="{{ asset('uploads/8/'~im.path) }}" width="500px" height="250px"
+                                         class="img-responsive"/>
+
+                                    <div class="carousel-caption">
+                                        <h4>
+                                            {{ im.name }}
+                                        </h4>
+
+                                        <p>
+                                            {{ im.description }}
+                                        </p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <!-- End repeat -->
+                        </div> <a class="left carousel-control" href="#carousel-371506" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a class="right carousel-control" href="#carousel-371506" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+                    <div class="col-md-6 column" id="annonce"  style="height: 400px ;margin:  0 auto">
+
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            <div class="well well-sm">
+                <h3 class="alert alert-success price" style="margin-bottom: 15px;">
+                    Prix  : {{ entity.prix }}
+                </h3>
+
+                <div class="col-md-12">
+
+                    <div class="row">
+                        <div class="col-md-6 column">
+                            <dl>
+                                <dt>
+                                <h4> Texte de l'annonce :</h4>
+                                </dt>
+                                <dd>
+                                    {{ entity.texte }}
+                                </dd>
+                                <dt>
+                                <h4>Specificitées</h4>
+                                </dt>
+                                <dd>
+                                    <table class="record_properties">
+                                        <tbody>
+
+                                        <tr>
+                                            <th>Titre de l'annonce :</th>
+                                            <td>{{ entity.titre }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Superficie terrain :</th>
+                                            <td>{{ entity.superficie }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Prix</th>
+                                            <td>{{ entity.prix }}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                </dd>
+                            </dl>
+                            <small># Référence : TA{{ entity.id }}</small>
+                        </div>
+                        <div class="col-md-6 column">
+                            <button type="button" class="btn btn-default pull-right">envoyer par mail</button>
+                            <button type="button" class="btn btn-default pull-right">partager sur FB</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="alert alert-success price" style="margin-top: 15px;">
+                    <button type="button" class="btn btn-lg" style="background-color: #ffffff;">Contactez-nous</button>
+                </h3>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+
+            {% include 'ApplicationHomeBundle::formContact.html.twig' %}
+        </div>
+
+    </div>
+
+
+{% endblock %}
+    {% block map %}
+        google.maps.event.addDomListener(window, 'load', annonce({{ entity.longitude }},{{ entity.latitude }}));
+    {% endblock map %}

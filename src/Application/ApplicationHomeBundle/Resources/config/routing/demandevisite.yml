@@ -1,0 +1,30 @@
+demandevisite:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:DemandeVisite:index" }
+
+demandevisite_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:DemandeVisite:show" }
+
+demandevisite_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:DemandeVisite:new" }
+
+demandevisite_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:DemandeVisite:create" }
+    methods:  POST
+
+demandevisite_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:DemandeVisite:edit" }
+
+demandevisite_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:DemandeVisite:update" }
+    methods:  [POST, PUT]
+
+demandevisite_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:DemandeVisite:delete" }
+    methods:  [POST, DELETE]

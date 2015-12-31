@@ -1,0 +1,66 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: hamza
+ * Date: 14/03/2015
+ * Time: 14:55
+ */
+
+namespace Application\ApplicationHomeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Annonce
+ *
+ * @ORM\Table(name="demandeVisite")
+ * @ORM\Entity
+ */
+
+
+class DemandeVisite {
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=45, nullable=true)
+     */
+    private $nom;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=45, nullable=true)
+     */
+    private $email;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tel", type="string", length=45, nullable=true)
+     */
+    private $tel;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="horaire", type="string", length=45, nullable=true)
+     */
+    private $horaire;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texte", type="string", length=45, nullable=true)
+     */
+    private $texte;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="annonce", type="string", length=45, nullable=true)
+     */
+    private $annonce;
+
+}

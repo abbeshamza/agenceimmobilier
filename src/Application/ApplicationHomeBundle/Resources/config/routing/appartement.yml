@@ -1,0 +1,30 @@
+appartement:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:Appartement:index" }
+
+appartement_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:Appartement:show" }
+
+appartement_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:Appartement:new" }
+
+appartement_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:Appartement:create" }
+    requirements: { _method: post }
+
+appartement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:Appartement:edit" }
+
+appartement_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:Appartement:update" }
+    requirements: { _method: post|put }
+
+appartement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:Appartement:delete" }
+    requirements: { _method: post|delete }

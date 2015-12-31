@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+{%block menu4_class%}active{%endblock%}
+
+{%block menu2_class%}{%endblock%}
+{% block body -%}
+
+
+    <div class="col-md-offset-4">
+        <h2> Contacter nous</h2>
+    </div>
+    <div class="col-md-offset-2">
+        {{ form_start(form) }}
+
+        <div>
+            <table>
+                <tr> <th>Votre numéro de téléphone ou votre email :</th><th> {{ form_widget(form.contact) }}</th></tr>
+                <tr><th> sujet :</th><th> {{ form_widget(form.sujet) }}</th></tr>
+                <tr> <th>message :</th><th> {{ form_widget(form.description,{'attr': {'rows': '9','style':' width :400px'}}) }}</th></tr>
+            </table>
+            <br>
+            <div class="col-md-offset-7"> {{ form_widget(form.submit) }}</div>
+ </div>
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

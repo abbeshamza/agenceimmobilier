@@ -1,0 +1,30 @@
+typeannonce:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:TypeAnnonce:index" }
+
+typeannonce_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:TypeAnnonce:show" }
+
+typeannonce_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:TypeAnnonce:new" }
+
+typeannonce_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:TypeAnnonce:create" }
+    requirements: { _method: post }
+
+typeannonce_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:TypeAnnonce:edit" }
+
+typeannonce_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:TypeAnnonce:update" }
+    requirements: { _method: post|put }
+
+typeannonce_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:TypeAnnonce:delete" }
+    requirements: { _method: post|delete }

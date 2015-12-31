@@ -1,0 +1,186 @@
+{% extends '::base.html.twig' %}
+{% block contenu%}
+    <div class="row" xmlns="http://www.w3.org/1999/html">
+        <!-- right column -->
+
+        <div class="col-md-4">
+            <div class="well well-sm">
+                <!-- block -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">Filtre</div>
+                    <div class="panel-body">
+
+                        {% include '::filter.html.twig' %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+
+
+            <!-- REPEAT -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <h3 class="alert alert-info titreAnnonce">
+                                    Titre Annonce <small>Réference...</small>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-6 column">
+                                <img alt="140x140" src="http://lorempixel.com/350/190/"  class="img-responsive"/>
+                            </div>
+
+                            <div class="col-md-6 column">
+                                <blockquote>
+                                    <ul class="listDesc">
+                                        <li>
+                                            <h4>[A vendre]</h4>
+                                        </li>
+                                        <li>
+                                            Lieu :
+                                        </li>
+                                        <li>
+                                            Surface :
+                                        </li>
+                                        <li>
+                                            Prix :
+                                        </li>
+                                        <li>
+                                            Prix de F.C :
+                                        </li>
+                                    </ul>
+                                </blockquote>
+                                <button type="button" class="btn btn-default pull-right"><a href="annonce-single.php">Fiche détaillee</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- REPEAT -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <h3 class="alert alert-info titreAnnonce">
+                                    Titre Annonce <small>Réference...</small>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-6 column">
+                                <img alt="140x140" src="http://lorempixel.com/350/190/"  class="img-responsive"/>
+                            </div>
+
+                            <div class="col-md-6 column">
+                                <blockquote>
+                                    <ul class="listDesc">
+                                        <li>
+                                            <h4>[A louer]</h4>
+                                        </li>
+                                        <li>
+                                            Lieu :
+                                        </li>
+                                        <li>
+                                            Surface :
+                                        </li>
+                                        <li>
+                                            Prix :
+                                        </li>
+                                        <li>
+                                            Prix de F.C :
+                                        </li>
+                                    </ul>
+                                </blockquote>
+                                <button type="button" class="btn btn-default pull-right"><a href="annonce-single.php">Fiche détaillee</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- REPEAT -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <h3 class="alert alert-info titreAnnonce">
+                                    Titre Annonce <small>Réference...</small>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-6 column">
+                                <img alt="140x140" src="http://lorempixel.com/350/190/"  class="img-responsive"/>
+                            </div>
+
+                            <div class="col-md-6 column">
+                                <blockquote>
+                                    <ul class="listDesc">
+                                        <li>
+                                            <h4>[A louer]</h4>
+                                        </li>
+                                        <li>
+                                            Lieu :
+                                        </li>
+                                        <li>
+                                            Surface :
+                                        </li>
+                                        <li>
+                                            Prix :
+                                        </li>
+                                        <li>
+                                            Prix de F.C :
+                                        </li>
+                                    </ul>
+                                </blockquote>
+                                <button type="button" class="btn btn-default pull-right"><a href="annonce-single.php">Fiche détaillee</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- REPEAT -->
+        </div>
+    </div>
+
+    <!-- pagination -->
+
+    <div class="row clearfix paginationBlock">
+        <div class="col-md-4  col-md-offset-8 column" align="right">
+            <ul class="pagination">
+                <li>
+                    <a href="#">Prev</a>
+                </li>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

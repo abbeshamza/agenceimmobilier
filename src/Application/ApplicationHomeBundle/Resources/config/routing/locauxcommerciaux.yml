@@ -1,0 +1,30 @@
+locauxcommerciaux:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:Locauxcommerciaux:index" }
+
+locauxcommerciaux_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:Locauxcommerciaux:show" }
+
+locauxcommerciaux_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:Locauxcommerciaux:new" }
+
+locauxcommerciaux_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:Locauxcommerciaux:create" }
+    requirements: { _method: post }
+
+locauxcommerciaux_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:Locauxcommerciaux:edit" }
+
+locauxcommerciaux_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:Locauxcommerciaux:update" }
+    requirements: { _method: post|put }
+
+locauxcommerciaux_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:Locauxcommerciaux:delete" }
+    requirements: { _method: post|delete }

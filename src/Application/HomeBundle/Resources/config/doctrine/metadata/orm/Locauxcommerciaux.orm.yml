@@ -1,0 +1,63 @@
+Locauxcommerciaux:
+    type: entity
+    table: locauxcommerciaux
+    indexes:
+        fk_locauxcommerciaux_region1_idx:
+            columns:
+                - region_id
+        fk_locauxcommerciaux_type_annonce1_idx:
+            columns:
+                - type_annonce_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        superficie:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        prix:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        texte:
+            type: string
+            nullable: true
+            length: 1000
+            fixed: false
+            comment: ''
+    manyToOne:
+        region:
+            targetEntity: Region
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                region_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        typeAnnonce:
+            targetEntity: TypeAnnonce
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                type_annonce_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

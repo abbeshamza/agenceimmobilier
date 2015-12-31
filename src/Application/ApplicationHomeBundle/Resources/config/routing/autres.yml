@@ -1,0 +1,30 @@
+autres:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:Autres:index" }
+
+autres_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:Autres:show" }
+
+autres_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:Autres:new" }
+
+autres_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:Autres:create" }
+    requirements: { _method: post }
+
+autres_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:Autres:edit" }
+
+autres_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:Autres:update" }
+    requirements: { _method: post|put }
+
+autres_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:Autres:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Upload File</h1>
+    <form action="{{ path('upload',{'obj': obj} ) }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Upload Document" />
+    </form>
+    {% if test == 1 %}
+        <button><a href="{{ path('application_home_homepage') }}"> home </a>
+        </button>
+ {% endif %}
+{% endblock %}

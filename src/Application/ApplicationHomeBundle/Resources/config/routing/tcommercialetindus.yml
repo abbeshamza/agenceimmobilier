@@ -1,0 +1,30 @@
+tcommercialetindus:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:TCommercialEtIndus:index" }
+
+tcommercialetindus_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:TCommercialEtIndus:show" }
+
+tcommercialetindus_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:TCommercialEtIndus:new" }
+
+tcommercialetindus_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:TCommercialEtIndus:create" }
+    requirements: { _method: post }
+
+tcommercialetindus_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:TCommercialEtIndus:edit" }
+
+tcommercialetindus_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:TCommercialEtIndus:update" }
+    requirements: { _method: post|put }
+
+tcommercialetindus_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:TCommercialEtIndus:delete" }
+    requirements: { _method: post|delete }

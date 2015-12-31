@@ -1,0 +1,126 @@
+{% extends '::base.html.twig' %}
+{%block menu1_class%}{%endblock%}
+{%block menu2_class%}{%endblock%}
+{%block menu3_class%}{%endblock%}
+{%block menu4_class%}{%endblock%}
+{% block menu5_class %}active{% endblock %}
+{% block body -%}
+    <div class="row clearfix">
+        <div class="col-md-3 column">
+
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    Menu gestion
+                </a>
+
+
+                <a class="list-group-item" href="{{ path('contacter') }}"><span class="badge">{{ nbr_message }}</span>Boite récéption</a>
+
+                <a class="list-group-item" href="{{ path('annonce') }}"><span class="badge" >{{ nbr_annonce }}</span>Annonce clients</a>
+
+                <a class="list-group-item" href="{{ path('Admin_home_page') }}">Annonces</a>
+
+                <a class="list-group-item" href="{{ path('slide') }}">Slider images</a>
+
+                <a class="list-group-item" href="{{ path('demandevisite') }}"><span class="badge">{{ nbr_visite }}</span>Demande de visite par client</a>
+
+                <a class="list-group-item">Mailing list</a>
+
+
+            </div>
+
+        </div>
+        <div class="col-md-9 column">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                   {% block contenu %}
+                       <div class="row clearfix lienPage">
+                           <div class="col-md-12">
+                               <div class="panel panel-default">
+                                   <div class="panel-heading">Nouvelle annonce</div>
+                                   <div class="panel-body">
+                                       <div class="row clearfix rowLien">
+
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/villa.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('villa_new') }}>&nbsp;&nbsp;Villa</a></h5>
+                                               </div>
+                                           </div>
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/appart.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('appartement_new') }}>&nbsp;&nbsp;Appartement</a></h5>
+                                               </div>
+                                           </div>
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/vacance.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('maisonvacance_new') }}>&nbsp;&nbsp;Maison de vacances</a>
+                                                   </h5>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="row clearfix rowLien">
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/bureau.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('bureaux_new') }}>&nbsp;&nbsp;Bureaux</a></h5>
+                                               </div>
+                                           </div>
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/commerce.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('locauxcommerciaux_new') }}>&nbsp;&nbsp;Locaux
+                                                           commerciaux</a></h5>
+                                               </div>
+                                           </div>
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/habit.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('thabitation_new') }}>&nbsp;&nbsp;Terrain d’habitation</a>
+                                                   </h5>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="row clearfix rowLien">
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/indust.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('tcommercialetindus_new') }}>&nbsp;&nbsp;Terrain à usage
+                                                           commercial et Industriel</a></h5>
+                                               </div>
+                                           </div>
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/agricole.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('tagricole_new') }}>&nbsp;&nbsp;Terrain agricole</a></h5>
+                                               </div>
+                                           </div>
+                                           <div class="col-md-4 column">
+                                               <div class="well">
+                                                   <img src="{{ asset('bundles/agence/img/icon/autre.gif') }}" class="img-responsive"
+                                                        align="left"/>
+                                                   <h5 class="lienH"><a href={{ path('autres_new') }}>&nbsp;&nbsp;Autre</a></h5>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   {% endblock contenu %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock body %}

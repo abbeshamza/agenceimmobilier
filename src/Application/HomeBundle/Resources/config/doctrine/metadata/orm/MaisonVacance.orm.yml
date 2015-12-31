@@ -1,0 +1,83 @@
+MaisonVacance:
+    type: entity
+    table: maison_vacance
+    indexes:
+        fk_maison_vacance_nbr_piece1_idx:
+            columns:
+                - nbr_piece_id
+        fk_maison_vacance_region1_idx:
+            columns:
+                - region_id
+        fk_maison_vacance_type_annonce1_idx:
+            columns:
+                - type_annonce_id
+        fk_maison_vacance_type_bien1_idx:
+            columns:
+                - type_bien_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        prix:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        texteAoonce:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: texte_aoonce
+    manyToOne:
+        nbrPiece:
+            targetEntity: NbrPiece
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                nbr_piece_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        region:
+            targetEntity: Region
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                region_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        typeAnnonce:
+            targetEntity: TypeAnnonce
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                type_annonce_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        typeBien:
+            targetEntity: TypeBien
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                type_bien_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

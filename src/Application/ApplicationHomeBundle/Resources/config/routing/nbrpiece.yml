@@ -1,0 +1,30 @@
+nbrpiece:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:NbrPiece:index" }
+
+nbrpiece_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:NbrPiece:show" }
+
+nbrpiece_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:NbrPiece:new" }
+
+nbrpiece_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:NbrPiece:create" }
+    requirements: { _method: post }
+
+nbrpiece_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:NbrPiece:edit" }
+
+nbrpiece_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:NbrPiece:update" }
+    requirements: { _method: post|put }
+
+nbrpiece_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:NbrPiece:delete" }
+    requirements: { _method: post|delete }

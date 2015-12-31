@@ -1,0 +1,12 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="container" style="text-align: center">
+    <h2>Registration </h2>
+<div class="span10 offset1">
+<div class="well">
+{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+</div>
+</div>
+ </div>
+{% endblock fos_user_content %}

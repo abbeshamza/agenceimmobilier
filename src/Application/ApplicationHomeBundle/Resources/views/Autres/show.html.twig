@@ -1,0 +1,110 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}<div class="row clearfix" style="margin-top: 20px;">
+    <div class="col-md-12">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-md-6 column">
+                    <div class="carousel slide" id="carousel-371506">
+                        <ol class="carousel-indicators">
+                            <li class="active" data-slide-to="0" data-target="#carousel-371506">
+                            </li>
+                            <li data-slide-to="1" data-target="#carousel-371506">
+                            </li>
+                            <li data-slide-to="2" data-target="#carousel-371506">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img alt="" src="http://lorempixel.com/1600/500/sports/1"  class="img-responsive"/>
+                                <div class="carousel-caption">
+                                    <h4>
+
+                                    </h4>
+                                    <p>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img alt="" src="http://lorempixel.com/1600/500/sports/2"  class="img-responsive"/>
+                                <div class="carousel-caption">
+                                    <h4>
+
+                                    </h4>
+                                    <p>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img alt="" src="http://lorempixel.com/1600/500/sports/3"  class="img-responsive"/>
+                                <div class="carousel-caption">
+                                    <h4>
+
+                                    </h4>
+                                    <p>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <a class="left carousel-control" href="#carousel-371506" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a class="right carousel-control" href="#carousel-371506" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+                <div class="col-md-6 column">
+                    Géolocalisation
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            <div class="well well-sm">
+                <h3 class="alert alert-success price" style="margin-bottom: 15px;">
+
+                </h3>
+
+                <div class="col-md-12">
+
+                    <div class="row">
+                        <div class="col-md-6 column">
+                            <dl>
+                                <dt>
+                                <h4> Texte de l'annonce :</h4>
+                                </dt>
+                                <dd>
+                                    {{ entity.texte }}
+                                </dd>
+                                <dt>
+
+                            </dl>
+                            <small># Référence : Au{{ entity.id }}</small>
+                        </div>
+                        <div class="col-md-6 column">
+                            <button type="button" class="btn btn-default pull-right">envoyer par mail</button>
+                            <button type="button" class="btn btn-default pull-right">partager sur FB</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="alert alert-success price" style="margin-top: 15px;">
+                    <button type="button" class="btn btn-lg" style="background-color: #ffffff;">Contactez-nous</button>
+                </h3>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+
+            {% include 'ApplicationHomeBundle::formContact.html.twig' %}
+        </div>
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,109 @@
+Villa:
+    type: entity
+    table: villa
+    indexes:
+        fk_villa_type_annonce1_idx:
+            columns:
+                - type_annonce_id
+        fk_villa_region1_idx:
+            columns:
+                - region_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        confort:
+            type: string
+            nullable: true
+            length: 1000
+            fixed: false
+            comment: ''
+        superficieTerrain:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: superficie_terrain
+        surfaceBatie:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: surface_batie
+        nbrEtage:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: nbr_etage
+        nbrChambre:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: nbr_chambre
+        nbrSalon:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: nbr_salon
+        nbrSalleAMange:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: nbr_salle_a_mange
+        nbrSalleDeBain:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: nbr_salle_de_bain
+        prix:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        texteAnnonce:
+            type: string
+            nullable: true
+            length: 1000
+            fixed: false
+            comment: ''
+            column: texte_annonce
+    manyToOne:
+        typeAnnonce:
+            targetEntity: TypeAnnonce
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                type_annonce_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        region:
+            targetEntity: Region
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                region_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+confort:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:Confort:index" }
+
+confort_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:Confort:show" }
+
+confort_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:Confort:new" }
+
+confort_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:Confort:create" }
+    requirements: { _method: post }
+
+confort_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:Confort:edit" }
+
+confort_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:Confort:update" }
+    requirements: { _method: post|put }
+
+confort_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:Confort:delete" }
+    requirements: { _method: post|delete }

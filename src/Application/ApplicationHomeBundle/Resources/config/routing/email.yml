@@ -1,0 +1,30 @@
+email:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:Email:index" }
+
+email_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:Email:show" }
+
+email_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:Email:new" }
+
+email_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:Email:create" }
+    requirements: { _method: post }
+
+email_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:Email:edit" }
+
+email_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:Email:update" }
+    requirements: { _method: post|put }
+
+email_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:Email:delete" }
+    requirements: { _method: post|delete }

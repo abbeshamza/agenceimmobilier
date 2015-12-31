@@ -1,0 +1,41 @@
+{% extends 'ApplicationHomeBundle:Admin:index.html.twig' %}
+
+{% block contenu -%}
+    <h1>Boite de Reception</h1>
+
+    <table class="table-bordered col-md-9">
+        <thead>
+            <tr>
+
+                <th>Contact</th>
+                <th>Sujet</th>
+                <th>Description</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.contact }}</td>
+                <td>{{ entity.sujet }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.statut }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('contacter_show', { 'id': entity.id }) }}">afficher</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('contacter_edit', { 'id': entity.id }) }}">modifier</a>
+                    </li>
+
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {% endblock %}

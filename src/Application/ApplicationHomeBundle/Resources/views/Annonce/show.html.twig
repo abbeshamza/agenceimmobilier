@@ -1,0 +1,45 @@
+{% extends 'ApplicationHomeBundle:Admin:index.html.twig' %}
+
+{% block contenu -%}
+    <h1>Annonce</h1>
+
+    <table class="record_properties">
+        <tbody>
+
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            <tr>
+                <th>Texte</th>
+                <td>{{ entity.texte }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ entity.tel }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ entity.statut }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('annonce') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('annonce_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

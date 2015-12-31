@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+{%block menu3_class%}active{%endblock%}
+
+{%block menu2_class%}{%endblock%}
+
+{% block body -%}
+<div class="col-md-offset-4">
+    <h2> Déposer votre Annonce</h2>
+    </div>
+   <div class="col-md-offset-2">
+    {{ form_start(form) }}
+
+    <div>
+        <table>
+            <tr><th>Le titre de l'annonce :</th>  <th> {{ form_widget(form.titre) }}</th></tr>
+
+            <tr> <th>Type de l'annonce :</th><th> {{ form_widget(form.typeAnnonceClient) }}</th></tr>
+            <tr><th> Votre Email :</th><th> {{ form_widget(form.email) }}</th></tr>
+            <tr><th> Votre numéro de téléphone : </th><th>{{ form_widget(form.tel) }}</th></tr>
+            <tr> <th>Le texte de l'annonce :</th><th> {{ form_widget(form.texte,{'attr': {'rows': '9','style':' width :400px'}}) }}</th></tr>
+        </table>
+        <br>
+           <div class="col-md-offset-7"> {{ form_widget(form.submit) }}</div>
+
+
+
+
+
+    </div>
+
+    {{ form_end(form) }}
+   </div>
+
+{% endblock %}

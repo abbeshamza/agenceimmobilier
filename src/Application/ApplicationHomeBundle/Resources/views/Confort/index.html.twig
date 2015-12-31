@@ -1,0 +1,83 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Confort list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ascenseur</th>
+                <th>Adsl</th>
+                <th>Antenneparabolique</th>
+                <th>Balcon</th>
+                <th>Cellier</th>
+                <th>Chauffage</th>
+                <th>Climatisation</th>
+                <th>Cuisineequipe</th>
+                <th>Doublevitrage</th>
+                <th>Dressing</th>
+                <th>Gazdeville</th>
+                <th>Interphone</th>
+                <th>Jardinprivatif</th>
+                <th>Marbreblanc</th>
+                <th>Marbrethala</th>
+                <th>Piscine</th>
+                <th>Parking</th>
+                <th>Placard</th>
+                <th>Residencegardee</th>
+                <th>Syndic</th>
+                <th>Telephone</th>
+                <th>Videosurveillance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('confort_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.ascenseur }}</td>
+                <td>{{ entity.adsl }}</td>
+                <td>{{ entity.antenneParabolique }}</td>
+                <td>{{ entity.balcon }}</td>
+                <td>{{ entity.cellier }}</td>
+                <td>{{ entity.chauffage }}</td>
+                <td>{{ entity.climatisation }}</td>
+                <td>{{ entity.cuisineEquipe }}</td>
+                <td>{{ entity.doubleVitrage }}</td>
+                <td>{{ entity.dressing }}</td>
+                <td>{{ entity.gazDeVille }}</td>
+                <td>{{ entity.interphone }}</td>
+                <td>{{ entity.jardinPrivatif }}</td>
+                <td>{{ entity.marbreBlanc }}</td>
+                <td>{{ entity.marbreThala }}</td>
+                <td>{{ entity.piscine }}</td>
+                <td>{{ entity.parking }}</td>
+                <td>{{ entity.placard }}</td>
+                <td>{{ entity.residenceGardee }}</td>
+                <td>{{ entity.syndic }}</td>
+                <td>{{ entity.telephone }}</td>
+                <td>{{ entity.videoSurveillance }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('confort_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('confort_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('confort_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

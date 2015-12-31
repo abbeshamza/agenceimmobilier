@@ -1,0 +1,30 @@
+villa:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:Villa:index" }
+
+villa_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:Villa:show" }
+
+villa_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:Villa:new" }
+
+villa_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:Villa:create" }
+    requirements: { _method: post }
+
+villa_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:Villa:edit" }
+
+villa_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:Villa:update" }
+    requirements: { _method: post|put }
+
+villa_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:Villa:delete" }
+    requirements: { _method: post|delete }

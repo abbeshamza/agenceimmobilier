@@ -1,0 +1,124 @@
+
+application_home_demandevisite:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/demandevisite.yml"
+    prefix:   /demandevisite
+
+application_home_email:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/email.yml"
+    prefix:   /email
+
+application_home_contacter:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/contacter.yml"
+    prefix:   /contacter
+
+
+application_home_typeannonceclient:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/typeannonceclient.yml"
+    prefix:   /typeannonceclient
+
+application_home_annonce:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/annonce.yml"
+    prefix:   /annonce
+
+application_home_typebien:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/typebien.yml"
+    prefix:   /typebien
+
+application_home_villa:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/villa.yml"
+    prefix:   /villa
+
+application_home_typeannonce:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/typeannonce.yml"
+    prefix:   /typeannonce
+
+application_home_thabitation:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/thabitation.yml"
+    prefix:   /thabitation
+
+application_home_tcommercialetindus:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/tcommercialetindus.yml"
+    prefix:   /tcommercialetindus
+
+application_home_tagricole:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/tagricole.yml"
+    prefix:   /tagricole
+
+application_home_region:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/region.yml"
+    prefix:   /region
+
+application_home_nbrpiece:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/nbrpiece.yml"
+    prefix:   /nbrpiece
+
+application_home_maisonvacance:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/maisonvacance.yml"
+    prefix:   /maisonvacance
+
+application_home_locauxcommerciaux:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/locauxcommerciaux.yml"
+    prefix:   /locauxcommerciaux
+
+application_home_confort:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/confort.yml"
+    prefix:   /confort
+
+application_home_bureaux:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/bureaux.yml"
+    prefix:   /bureaux
+
+application_home_autres:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/autres.yml"
+    prefix:   /autres
+
+application_home_appartement:
+    resource: "@ApplicationHomeBundle/Resources/config/routing/appartement.yml"
+    prefix:   /appartement
+
+application_home_homepage:
+    path:     /home
+    defaults: { _controller: ApplicationHomeBundle:Default:index }
+deposer:
+    path:     /Deposer_une_annonce
+    defaults: { _controller:  ApplicationHomeBundle:Default:deposer}
+
+upload:
+    path:     /importer/{obj}
+    defaults: { _controller:  ApplicationHomeBundle:Image:upload}
+slide:
+    path:     /slide
+    defaults: { _controller:  ApplicationHomeBundle:Slide:upload}
+visite:
+    path:     /
+    defaults: { _controller:  ApplicationHomeBundle:Default:demandeVisite}
+email:
+    path:     /
+    defaults: { _controller:  ApplicationHomeBundle:Default:email}
+Admin_home_page:
+    path:     /Admin/home
+    defaults: { _controller:  ApplicationHomeBundle:Admin:index}
+filter:
+    pattern:     /annonce/filter
+    defaults: { _controller:  ApplicationHomeBundle:Filter:filter}
+
+filter_index:
+    pattern:     /filter/index
+    defaults: { _controller:  ApplicationHomeBundle:Filter:index}
+filter_resultat:
+    pattern:     /resultats
+    defaults: { _controller:  ApplicationHomeBundle:Filter:filter}
+delegation:
+    pattern:     /delegation
+    defaults: { _controller:  ApplicationHomeBundle:Filter:delegation}
+
+## à supprimer pour le test de json et angular
+
+filterangular:
+    pattern:     /angular
+    defaults: { _controller:  ApplicationHomeBundle:Filter:testAngular}
+
+
+#######
+
+

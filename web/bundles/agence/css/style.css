@@ -1,0 +1,60 @@
+body{
+    margin : 50px 0 0 0;
+}
+.alert{
+    border-radius: 0;
+}
+/**/
+.price{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.titreAnnonce{
+    margin-top: 0;
+}
+/**/
+.nav-tabs>li>a{
+    border-radius: 0;
+}
+.btn{
+    border-radius:0;
+}
+.form-control{
+    border-radius:0;
+}
+.panel{
+    border-radius:0;
+}
+.well{
+    border-radius:0;
+}
+
+.page{
+    background-color: rgba(205,205,205,0.1);
+}
+
+/* lien vers les pages */
+.lienPage{
+    margin-top : 20px;
+}
+
+.rowLien{
+    margin: 15px 0 15px 0;
+}
+.lienH{
+    display : inline !important;
+}
+
+/* footer */
+.footer{
+    margin-top: 20px;
+
+}
+.copy{
+    margin-bottom: 10px;
+}
+
+.listDesc{
+    list-style-type: none;
+    padding: 0;
+}

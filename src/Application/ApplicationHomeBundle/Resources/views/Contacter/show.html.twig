@@ -1,0 +1,41 @@
+{% extends 'ApplicationHomeBundle:Admin:index.html.twig' %}
+
+{% block contenu -%}
+    <h1>Contacter</h1>
+
+    <table class="record_properties">
+        <tbody>
+
+            <tr>
+                <th>Contact</th>
+                <td>{{ entity.contact }}</td>
+            </tr>
+            <tr>
+                <th>Sujet</th>
+                <td>{{ entity.sujet }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ entity.statut }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('contacter') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('contacter_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

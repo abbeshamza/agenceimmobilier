@@ -1,0 +1,133 @@
+Confort:
+    type: entity
+    table: confort
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        ascenseur:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        adsl:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        antenneParabolique:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: antenne_parabolique
+        balcon:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        cellier:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        chauffage:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        climatisation:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        cuisineEquipe:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: cuisine_equipe
+        doubleVitrage:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: double_vitrage
+        dressing:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        gazDeVille:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: gaz_de_ville
+        interphone:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        jardinPrivatif:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: jardin_privatif
+        marbreBlanc:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: marbre_blanc
+        marbreThala:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: marbre_thala
+        piscine:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        parking:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        placard:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        residenceGardee:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: residence_gardee
+        syndic:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        telephone:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        videoSurveillance:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: video_surveillance
+    lifecycleCallbacks: {  }

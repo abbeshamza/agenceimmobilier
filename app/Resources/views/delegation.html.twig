@@ -1,0 +1,23 @@
+{% if response is defined%}
+    <br>
+ Delegation :
+
+    <select name="delegation">
+    {% if region == 'Tunis' %}
+    <option>barcalone </option>
+    <option>tunis ville</option>
+        <option> manar</option>
+        <option> manzah</option>
+    {% endif %}
+
+
+    {% if region == 'Manouba' %}
+
+            <option>bardo</option>
+            <option>Danden</option>
+            <option> khaznadar</option>
+
+    {% endif %}
+    </select>
+
+{% endif %}

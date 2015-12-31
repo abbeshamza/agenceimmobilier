@@ -1,0 +1,135 @@
+Images:
+    type: entity
+    table: images
+    indexes:
+        fk_images_appartement1_idx:
+            columns:
+                - appartement_id
+        fk_images_T_commercial_et_indus1_idx:
+            columns:
+                - T_commercial_et_indus_id
+        fk_images_T_agricole1_idx:
+            columns:
+                - T_agricole_id
+        fk_images_T_habitation1_idx:
+            columns:
+                - T_habitation_id
+        fk_images_maison_vacance1_idx:
+            columns:
+                - maison_vacance_id
+        fk_images_Autres1_idx:
+            columns:
+                - Autres_id
+        fk_images_locauxcommerciaux1_idx:
+            columns:
+                - locauxcommerciaux_id
+        fk_images_bureaux1_idx:
+            columns:
+                - bureaux_id
+        fk_images_villa1_idx:
+            columns:
+                - villa_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        repertoire:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        name:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    manyToOne:
+        appartement:
+            targetEntity: Appartement
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                appartement_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        tCommercialEtIndus:
+            targetEntity: TCommercialEtIndus
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                T_commercial_et_indus_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        tAgricole:
+            targetEntity: TAgricole
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                T_agricole_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        tHabitation:
+            targetEntity: THabitation
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                T_habitation_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        maisonVacance:
+            targetEntity: MaisonVacance
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                maison_vacance_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        autres:
+            targetEntity: Autres
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Autres_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        locauxcommerciaux:
+            targetEntity: Locauxcommerciaux
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                locauxcommerciaux_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        bureaux:
+            targetEntity: Bureaux
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                bureaux_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        villa:
+            targetEntity: Villa
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                villa_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

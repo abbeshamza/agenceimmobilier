@@ -1,0 +1,30 @@
+typebien:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:TypeBien:index" }
+
+typebien_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:TypeBien:show" }
+
+typebien_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:TypeBien:new" }
+
+typebien_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:TypeBien:create" }
+    requirements: { _method: post }
+
+typebien_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:TypeBien:edit" }
+
+typebien_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:TypeBien:update" }
+    requirements: { _method: post|put }
+
+typebien_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:TypeBien:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,29 @@
+{% extends 'ApplicationHomeBundle:Admin:index.html.twig' %}
+
+{% block contenu -%}
+    <h1>Upload Image Slide</h1>
+
+    <div class="col-md-offset-4">
+
+    </div>
+    <div class="col-md-offset-2">
+        <form action="{{ path('slide' ) }}" method="post" {{ form_enctype(form) }}>
+
+        <div>
+            <table>
+                <tr> <th>name :</th><th> {{ form_widget(form.name) }}</th></tr>
+                <tr><th> sujet :</th><th> {{ form_widget(form.description) }}</th></tr>
+                <tr><th> Image :</th><th> {{ form_widget(form.file) }}</th></tr>
+
+            </table>
+            <br>
+            <div class="col-md-offset-4"> <input type="submit" value="Upload Document" /></div>
+        </div>
+
+       </form>
+    </div>
+    {% if test == 1 %}
+        <button><a href="{{ path('application_home_homepage') }}"> home </a>
+        </button>
+    {% endif %}
+{% endblock %}

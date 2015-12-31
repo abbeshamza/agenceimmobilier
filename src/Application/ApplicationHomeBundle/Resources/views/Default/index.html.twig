@@ -1,0 +1,141 @@
+{% extends '::base.html.twig' %}
+
+    {% block menu1_class %}active{% endblock %}
+
+{% block menu2_class %}{% endblock %}
+
+{% block contenu %}
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div class="carousel slide" id="carousel-238600">
+            <ol class="carousel-indicators">
+                <li class="active" data-slide-to="0" data-target="#carousel-238600">
+                </li>
+                <li data-slide-to="1" data-target="#carousel-238600">
+                </li>
+                <li data-slide-to="2" data-target="#carousel-238600">
+                </li>
+            </ol>
+            <div class="carousel-inner">
+                <!--end repeat -->
+                {% set i = 0 %}
+                {% for im in entity %}
+                {% if i ==0 %}
+                <div class="item active ">
+                    {% set i = 1 %}
+                    {% else %}
+
+                <div class="item  ">
+                        {% endif %}
+
+                        <img alt="" src="{{ asset('uploads/slide/'~im.path) }}" class="img-responsive"/>
+
+                        <div class="carousel-caption">
+                            <h4>
+                                {{ im.name }}
+                            </h4>
+
+                            <p>
+                                {{ im.description }}
+                            </p>
+                        </div>
+                </div>
+                    {% endfor %}
+                    <!-- End repeat -->
+                </div>
+                <a class="left carousel-control" href="#carousel-238600" data-slide="prev"><span
+                            class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control"
+                                                                                    href="#carousel-238600"
+                                                                                    data-slide="next"><span
+                            class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+    </div>
+    <!-- bouton vers different pages -->
+    <div class="row clearfix lienPage">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Catégorie</div>
+                <div class="panel-body">
+                    <div class="row clearfix rowLien">
+
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/villa.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('villa') }}>&nbsp;&nbsp;Villa</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/appart.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('appartement') }}>&nbsp;&nbsp;Appartement</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/vacance.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('maisonvacance') }}>&nbsp;&nbsp;Maison de vacances</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix rowLien">
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/bureau.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('bureaux') }}>&nbsp;&nbsp;Bureaux</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/commerce.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('locauxcommerciaux') }}>&nbsp;&nbsp;Locaux
+                                        commerciaux</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/habit.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('thabitation') }}>&nbsp;&nbsp;Terrain d’habitation</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix rowLien">
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/indust.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('tcommercialetindus') }}>&nbsp;&nbsp;Terrain à usage
+                                        commercial et Industriel</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/agricole.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('tagricole') }}>&nbsp;&nbsp;Terrain agricole</a></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4 column">
+                            <div class="well">
+                                <img src="{{ asset('bundles/agence/img/icon/autre.gif') }}" class="img-responsive"
+                                     align="left"/>
+                                <h5 class="lienH"><a href={{ path('autres') }}>&nbsp;&nbsp;Autre</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- carousel dernier maj && carousel offre royale -->
+
+
+    {% endblock contenu %}

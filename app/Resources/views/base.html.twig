@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Agence Capital{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('bundles/agence/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ asset('bundles/agence/css/style.css') }}" type="text/css" rel="stylesheet"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144"
+              href="{{ asset('bundles/agence/img/apple-touch-icon-144-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x144"
+              href="{{ asset('bundles/agence/img/apple-touch-icon-114-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72"
+              href="{{ asset('bundles/agence/img/apple-touch-icon-72-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed"
+              href="{{ asset('bundles/agence/img/apple-touch-icon-57-precomposed.png') }}">
+        <link rel="shortcut icon" href="{{ asset('bundles/agence/img/favicon.png') }}">
+
+
+    {% endblock %}
+</head>
+<body>
+{% block page %}
+<div class="container page">
+    {% block header %}
+
+        <div class="row clearfix" style="margin-bottom: 20px;">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-default navbar-fixed-top container" role="navigation"
+                     style="border-bottom: solid #D52142 3px;">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1"><span
+                                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                                    class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <a class="navbar-brand" href={{ path( 'application_home_homepage') }}>
+                            <img src="{{ asset('bundles/agence/img/logo.png') }}" style="margin-top:-20px;"/>
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="{% block menu1_class %}{% endblock %}">
+
+                                <a href={{ path( 'application_home_homepage') }}>Accueil</a>
+                            </li>
+                            <li class="dropdown {% block menu2_class %}active{% endblock %}">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown">Annonce<strong
+                                            class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href={{ path('villa') }}>Villa</a>
+                                    </li>
+                                    <li>
+                                        <a href={{ path('appartement') }}>Appartement</a>
+                                    </li>
+                                    <li>
+                                        <a href={{ path('maisonvacance') }}>Maison de vacances</a>
+                                    </li>
+                                    <li>
+                                        <a href={{ path('bureaux') }}>Bureaux</a>
+                                    </li>
+                                    <li>
+                                        <a href={{ path('locauxcommerciaux') }}>Locaux commerciaux</a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li>
+                                        <a href={{ path('thabitation') }}>Terrain d'habitation</a>
+                                    </li>
+                                    <li>
+                                        <a href={{ path('tcommercialetindus') }}>Terrain à usage industriel et
+                                            commercial</a>
+                                    </li>
+                                    <li>
+                                        <a href={{ path('tagricole') }}>Terrain agricol</a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li>
+                                        <a href={{ path('autres') }}>Autre</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="{% block menu3_class %}{% endblock %}">
+                                <a href={{ path('annonce_new') }}>Votre annonce</a>
+                            </li>
+                            <li class="{% block menu4_class %}{% endblock %}">
+                                <a href={{ path('contacter_new') }}>Contact</a>
+                            </li>
+                            {% if is_granted('ROLE_USER') %}
+                            <li class="{% block menu5_class %}{% endblock %}"><a href="{{ path('Admin_home_page') }}">Admin home</a></li>
+                            {% endif %}
+
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search"
+                              action="{{ path('email') }}" method="POST">
+                            <div class="input-group" style="width: 15em">
+                            <span class="input-group-btn">
+                                  <button class="btn btn-default" type="submit "><i
+                                              class="glyphicon glyphicon-envelope"></i></button>
+                             </span>
+                                <input name="mail" type="text" class="form-control" placeholder="Newsletter">
+                            </div>
+                        </form>
+                        <!-- <form class="navbar-form navbar-right" role="search">
+                            <div class="input-group" style="width: 15em">
+                            <span class="input-group-btn">
+                                  <button class="btn btn-default" type="button"><i
+                                              class="glyphicon glyphicon-search"></i></button>
+                             </span>
+                                <input type="text" class="form-control" placeholder="Recherche...">
+                            </div>
+                        </form>
+                        -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    {% endblock %}
+    {% block body %}
+        {% block contenu %}
+        {% endblock contenu %}
+    {% endblock %}
+
+    {% include ('::footer.html.twig') %}
+</div>
+{% endblock page %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/agence/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/agence/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/agence/js/scripts.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/agence/js/angular.js') }}"></script>
+    <script type="text/javascript"
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAmzdeiAAGvtcD_WMFn4m-JAIEmXbe-qLY&sensor=false"></script>
+
+
+    <script type="text/javascript">
+        /* maps prop*/
+        function intialize() {
+            var center = new google.maps.LatLng(36.754382, 10.225537);
+            document.getElementById('co').value = center;
+            /*prop*/
+            var MapProp = {
+                Center: center,
+                Zoom: 8,
+                MapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            /*map object*/
+            var Map = new google.maps.Map(document.getElementById('map'), MapProp);
+            /*mmarqueur*/
+            var marker = new google.maps.Marker({
+                position: center,
+                draggable: true
+            });
+            marker.setMap(Map);
+            google.maps.event.addListener(marker, "dragend", function (evenement) {
+                this.setTitle(evenement.latLng.toUrlValue());
+                document.getElementById('co').value = marker.position;
+            });
+        }
+        /*loading map*/
+        google.maps.event.addDomListener(window, 'load', intialize);
+    </script>
+    <script type="text/javascript">
+        /* maps prop*/
+        function annonce(y,x) {
+            var center = new google.maps.LatLng(x,y);
+            /*prop*/
+            var MapProp = {
+                Center: center,
+                Zoom: 8,
+                MapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            /*map object*/
+            var Map = new google.maps.Map(document.getElementById('annonce'), MapProp);
+            /*mmarqueur*/
+            var marker = new google.maps.Marker({
+                position: center,
+                draggable: false
+            });
+            marker.setMap(Map);
+        }
+        /*loading map*/
+        {% block map %}
+        {% endblock map %}
+
+    </script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,97 @@
+Appartement:
+    type: entity
+    table: appartement
+    indexes:
+        fk_appartement_type_annonce_idx:
+            columns:
+                - type_annonce_id
+        fk_appartement_region1_idx:
+            columns:
+                - region_id
+        fk_appartement_nbr_piece1_idx:
+            columns:
+                - nbr_piece_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        confort:
+            type: string
+            nullable: true
+            length: 1000
+            fixed: false
+            comment: ''
+        superficie:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        numEtage:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: num_etage
+        anneConstruction:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+            column: anne_construction
+        prix:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+        texteAnnonce:
+            type: string
+            nullable: true
+            length: 1000
+            fixed: false
+            comment: ''
+            column: texte_annonce
+    manyToOne:
+        typeAnnonce:
+            targetEntity: TypeAnnonce
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                type_annonce_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        region:
+            targetEntity: Region
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                region_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        nbrPiece:
+            targetEntity: NbrPiece
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                nbr_piece_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

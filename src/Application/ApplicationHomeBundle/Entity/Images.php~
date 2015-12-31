@@ -1,0 +1,392 @@
+<?php
+
+namespace Application\ApplicationHomeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Images
+ *
+ * @ORM\Table(name="images", indexes={@ORM\Index(name="fk_images_appartement1_idx", columns={"appartement_id"}), @ORM\Index(name="fk_images_T_commercial_et_indus1_idx", columns={"T_commercial_et_indus_id"}), @ORM\Index(name="fk_images_T_agricole1_idx", columns={"T_agricole_id"}), @ORM\Index(name="fk_images_T_habitation1_idx", columns={"T_habitation_id"}), @ORM\Index(name="fk_images_maison_vacance1_idx", columns={"maison_vacance_id"}), @ORM\Index(name="fk_images_Autres1_idx", columns={"Autres_id"}), @ORM\Index(name="fk_images_locauxcommerciaux1_idx", columns={"locauxcommerciaux_id"}), @ORM\Index(name="fk_images_bureaux1_idx", columns={"bureaux_id"}), @ORM\Index(name="fk_images_villa1_idx", columns={"villa_id"})})
+ * @ORM\Entity
+ */
+class Images
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="repertoire", type="integer", nullable=true)
+     */
+    private $repertoire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=45, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var \Appartement
+     *
+     * @ORM\ManyToOne(targetEntity="Appartement")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="appartement_id", referencedColumnName="id")
+     * })
+     */
+    private $appartement;
+
+    /**
+     * @var \TCommercialEtIndus
+     *
+     * @ORM\ManyToOne(targetEntity="TCommercialEtIndus")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="T_commercial_et_indus_id", referencedColumnName="id")
+     * })
+     */
+    private $tCommercialEtIndus;
+
+    /**
+     * @var \TAgricole
+     *
+     * @ORM\ManyToOne(targetEntity="TAgricole")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="T_agricole_id", referencedColumnName="id")
+     * })
+     */
+    private $tAgricole;
+
+    /**
+     * @var \THabitation
+     *
+     * @ORM\ManyToOne(targetEntity="THabitation")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="T_habitation_id", referencedColumnName="id")
+     * })
+     */
+    private $tHabitation;
+
+    /**
+     * @var \MaisonVacance
+     *
+     * @ORM\ManyToOne(targetEntity="MaisonVacance")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="maison_vacance_id", referencedColumnName="id")
+     * })
+     */
+    private $maisonVacance;
+
+    /**
+     * @var \Autres
+     *
+     * @ORM\ManyToOne(targetEntity="Autres")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Autres_id", referencedColumnName="id")
+     * })
+     */
+    private $autres;
+
+    /**
+     * @var \Locauxcommerciaux
+     *
+     * @ORM\ManyToOne(targetEntity="Locauxcommerciaux")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="locauxcommerciaux_id", referencedColumnName="id")
+     * })
+     */
+    private $locauxcommerciaux;
+
+    /**
+     * @var \Bureaux
+     *
+     * @ORM\ManyToOne(targetEntity="Bureaux")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="bureaux_id", referencedColumnName="id")
+     * })
+     */
+    private $bureaux;
+
+    /**
+     * @var \Villa
+     *
+     * @ORM\ManyToOne(targetEntity="Villa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="villa_id", referencedColumnName="id")
+     * })
+     */
+    private $villa;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set repertoire
+     *
+     * @param integer $repertoire
+     * @return Images
+     */
+    public function setRepertoire($repertoire)
+    {
+        $this->repertoire = $repertoire;
+
+        return $this;
+    }
+
+    /**
+     * Get repertoire
+     *
+     * @return integer 
+     */
+    public function getRepertoire()
+    {
+        return $this->repertoire;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Images
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set appartement
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\Appartement $appartement
+     * @return Images
+     */
+    public function setAppartement(\Application\ApplicationHomeBundle\Entity\Appartement $appartement = null)
+    {
+        $this->appartement = $appartement;
+
+        return $this;
+    }
+
+    /**
+     * Get appartement
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\Appartement 
+     */
+    public function getAppartement()
+    {
+        return $this->appartement;
+    }
+
+    /**
+     * Set tCommercialEtIndus
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\TCommercialEtIndus $tCommercialEtIndus
+     * @return Images
+     */
+    public function setTCommercialEtIndus(\Application\ApplicationHomeBundle\Entity\TCommercialEtIndus $tCommercialEtIndus = null)
+    {
+        $this->tCommercialEtIndus = $tCommercialEtIndus;
+
+        return $this;
+    }
+
+    /**
+     * Get tCommercialEtIndus
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\TCommercialEtIndus 
+     */
+    public function getTCommercialEtIndus()
+    {
+        return $this->tCommercialEtIndus;
+    }
+
+    /**
+     * Set tAgricole
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\TAgricole $tAgricole
+     * @return Images
+     */
+    public function setTAgricole(\Application\ApplicationHomeBundle\Entity\TAgricole $tAgricole = null)
+    {
+        $this->tAgricole = $tAgricole;
+
+        return $this;
+    }
+
+    /**
+     * Get tAgricole
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\TAgricole 
+     */
+    public function getTAgricole()
+    {
+        return $this->tAgricole;
+    }
+
+    /**
+     * Set tHabitation
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\THabitation $tHabitation
+     * @return Images
+     */
+    public function setTHabitation(\Application\ApplicationHomeBundle\Entity\THabitation $tHabitation = null)
+    {
+        $this->tHabitation = $tHabitation;
+
+        return $this;
+    }
+
+    /**
+     * Get tHabitation
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\THabitation 
+     */
+    public function getTHabitation()
+    {
+        return $this->tHabitation;
+    }
+
+    /**
+     * Set maisonVacance
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\MaisonVacance $maisonVacance
+     * @return Images
+     */
+    public function setMaisonVacance(\Application\ApplicationHomeBundle\Entity\MaisonVacance $maisonVacance = null)
+    {
+        $this->maisonVacance = $maisonVacance;
+
+        return $this;
+    }
+
+    /**
+     * Get maisonVacance
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\MaisonVacance 
+     */
+    public function getMaisonVacance()
+    {
+        return $this->maisonVacance;
+    }
+
+    /**
+     * Set autres
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\Autres $autres
+     * @return Images
+     */
+    public function setAutres(\Application\ApplicationHomeBundle\Entity\Autres $autres = null)
+    {
+        $this->autres = $autres;
+
+        return $this;
+    }
+
+    /**
+     * Get autres
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\Autres 
+     */
+    public function getAutres()
+    {
+        return $this->autres;
+    }
+
+    /**
+     * Set locauxcommerciaux
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\Locauxcommerciaux $locauxcommerciaux
+     * @return Images
+     */
+    public function setLocauxcommerciaux(\Application\ApplicationHomeBundle\Entity\Locauxcommerciaux $locauxcommerciaux = null)
+    {
+        $this->locauxcommerciaux = $locauxcommerciaux;
+
+        return $this;
+    }
+
+    /**
+     * Get locauxcommerciaux
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\Locauxcommerciaux 
+     */
+    public function getLocauxcommerciaux()
+    {
+        return $this->locauxcommerciaux;
+    }
+
+    /**
+     * Set bureaux
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\Bureaux $bureaux
+     * @return Images
+     */
+    public function setBureaux(\Application\ApplicationHomeBundle\Entity\Bureaux $bureaux = null)
+    {
+        $this->bureaux = $bureaux;
+
+        return $this;
+    }
+
+    /**
+     * Get bureaux
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\Bureaux 
+     */
+    public function getBureaux()
+    {
+        return $this->bureaux;
+    }
+
+    /**
+     * Set villa
+     *
+     * @param \Application\ApplicationHomeBundle\Entity\Villa $villa
+     * @return Images
+     */
+    public function setVilla(\Application\ApplicationHomeBundle\Entity\Villa $villa = null)
+    {
+        $this->villa = $villa;
+
+        return $this;
+    }
+
+    /**
+     * Get villa
+     *
+     * @return \Application\ApplicationHomeBundle\Entity\Villa 
+     */
+    public function getVilla()
+    {
+        return $this->villa;
+    }
+}

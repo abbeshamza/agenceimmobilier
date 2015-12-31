@@ -1,0 +1,30 @@
+maisonvacance:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:MaisonVacance:index" }
+
+maisonvacance_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:MaisonVacance:show" }
+
+maisonvacance_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:MaisonVacance:new" }
+
+maisonvacance_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:MaisonVacance:create" }
+    requirements: { _method: post }
+
+maisonvacance_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:MaisonVacance:edit" }
+
+maisonvacance_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:MaisonVacance:update" }
+    requirements: { _method: post|put }
+
+maisonvacance_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:MaisonVacance:delete" }
+    requirements: { _method: post|delete }

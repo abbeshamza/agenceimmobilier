@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Demander une visite</div>
+    <div class="panel-body">
+
+        <form role="form" method="post" action={{ path('visite') }}>
+            <div class="form-group">
+                <input type="text" class="form-control" id="InputName" placeholder="Votre nom"name="nom"/>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="InputEmail" placeholder="Votre email" name="email"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="InputTel" placeholder="Votre téléphone" name="tel"/>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="choix">
+                    <option value="" selected>me contacter de préférence</option>
+                    <option value="matin">matin</option>
+                    <option value="midi">midi</option>
+                    <option value="soir">soir</option>
+                </select>
+            </div>
+            <div class="form-group">
+                            <textarea class="form-control" rows="3"
+                                      placeholder="Votre commentaire ou remarque" name="text"></textarea>
+            </div>
+            <input type="hidden" value="{{ entity }}" name="annonce">
+            <button type="submit" class="btn btn-default pull-right">Envoyer</button>
+        </form>
+    </div>
+</div>

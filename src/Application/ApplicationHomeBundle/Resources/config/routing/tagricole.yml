@@ -1,0 +1,30 @@
+tagricole:
+    path:     /
+    defaults: { _controller: "ApplicationHomeBundle:TAgricole:index" }
+
+tagricole_show:
+    path:     /{id}/show
+    defaults: { _controller: "ApplicationHomeBundle:TAgricole:show" }
+
+tagricole_new:
+    path:     /new
+    defaults: { _controller: "ApplicationHomeBundle:TAgricole:new" }
+
+tagricole_create:
+    path:     /create
+    defaults: { _controller: "ApplicationHomeBundle:TAgricole:create" }
+    requirements: { _method: post }
+
+tagricole_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ApplicationHomeBundle:TAgricole:edit" }
+
+tagricole_update:
+    path:     /{id}/update
+    defaults: { _controller: "ApplicationHomeBundle:TAgricole:update" }
+    requirements: { _method: post|put }
+
+tagricole_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ApplicationHomeBundle:TAgricole:delete" }
+    requirements: { _method: post|delete }

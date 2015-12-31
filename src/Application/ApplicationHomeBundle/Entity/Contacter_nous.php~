@@ -1,0 +1,52 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: hamza
+ * Date: 01/03/2015
+ * Time: 21:26
+ */
+
+namespace Application\ApplicationHomeBundle\Entity;
+
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
+/**
+ * Contacter_nous
+ *
+ * @ORM\Table(name="contact")
+ * @ORM\Entity
+ */
+class Contacter_nous {
+
+
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    public $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
+    public $contact;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    public $sujet;
+
+    /**
+     * @ORM\Column(type="string", length=600, nullable=true)
+     */
+    public $description;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    public $statut;
+
+}
